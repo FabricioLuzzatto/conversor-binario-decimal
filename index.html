@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor</title>
+</head>
+<body>
+   <h1>Conversor de Binário para Decimal</h1>
+   <div id="container">
+        <div class="content">
+            <label for="binario">Binário</label>
+            <input type="text" name="" id="binario">
+        </div>
+
+        <div class="content">
+            <label for="decimal">Decimal</label>
+            <input type="text" name="" id="decimal" readonly>
+        </div>
+
+   </div>
+   <button id="conversor" onclick="converter()">Converter</button>
+
+   <style>
+       body {
+           box-sizing: border-box;
+       }
+
+       h1 {
+           text-align: center;
+           margin-bottom: 50px;
+       }
+
+       #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+       }
+
+       .content{
+           width: 300px;
+           height: 100px;
+           margin-bottom: 10px;
+       }
+
+       .content:first-child {
+           margin-right: 150px;
+
+       }
+
+       .content input {
+           width: 100%;
+           height: 90%;
+           font-size: xx-large;
+       }
+
+       #conversor {
+           display: block;
+           margin-top: 20px;
+           margin-left: 45.5vw;
+       }
+   </style>
+
+   <script>
+
+        function converter () {
+            let bin = document.getElementById('binario').value;
+            
+            const numeros = bin.split('').find(elem => {
+                if (elem != 0 && elem != 1) {
+                    return alert("Digite um número binário, por favor!")
+                }
+                document.getElementById('decimal').value = parseInt(bin, 2)
+            })
+        }
+
+
+
+   </script>
+</body>
+</html>
